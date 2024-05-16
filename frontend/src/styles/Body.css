@@ -1,0 +1,58 @@
+.body-wrapper{
+    background-color: #000c21;
+    display: flex;
+    justify-content: center;
+    /*height: 105vh;*/
+    min-height: 92.8vh;
+    overflow-y: auto;
+}
+.i1{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Dubai,sans-serif;
+}
+
+.i2{
+    color: #cccccc;
+    font-family: Dubai,sans-serif;
+}
+
+#upload{
+    background-color: #deb823;
+    color: #000a31;
+    display: block;
+    line-height: 35px;
+    text-align: center;
+    margin-top: 0.5rem;
+    height: 2rem;
+    font-family: Dubai, serif;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+}
+#upload:hover{
+    cursor: pointer;
+}
+#upload:active{
+    transform: scale(0.98);
+}
+
+#detect-btn{
+    margin-top: 0.5rem;
+    width: 500px;
+    background-color: #000a57;
+    height: 2rem;
+    border-radius: 5px;
+}
+#detect-btn:hover{
+    cursor: pointer;
+}
+#detect-btn:disabled{
+    cursor: not-allowed;
+}
+
+
+
+
+

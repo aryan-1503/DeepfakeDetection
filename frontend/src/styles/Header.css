@@ -1,0 +1,61 @@
+.nav-bar{
+    width: 100vw;
+    height: 7vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:  #000c21;
+    font-size: x-large;
+    color: white;
+    font-family: Dubai, serif;
+    gap: 3rem;
+    font-weight: bolder;
+    letter-spacing: 0.07rem;
+}
+#icon{
+    font-size: 30px;
+}
+.header-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-btns{
+    display: flex;
+    gap: 1rem;
+}
+
+button{
+    background-color: #000c21;
+    border: none;
+    font-family: Dubai, serif;
+    font-size: 18px;
+    color: white;
+    height: 5vh;
+    width: 5rem;
+}
+#btn1{
+    width: 7rem;
+}
+button:hover{
+    cursor: pointer;
+}
+button:active{
+    transform: scale(0.98);
+}
+#sign-up{
+    background-color: #deb823;
+    border: none;
+    font-size: 17px;
+    color:  #000a31;
+    height: 5vh;
+    border-radius: 5px;
+    width: 5rem;
+    font-weight: bold;
+}
+
+#sign-up:active{
+    transform: scale(0.98);
+}

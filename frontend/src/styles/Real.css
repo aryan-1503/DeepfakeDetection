@@ -1,0 +1,15 @@
+.res-real{
+    margin-top: 1rem;
+    display: flex;
+    width: 500px;
+    height: 4rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #59fc35;
+    border-radius: 5px;
+    color: #000000;
+    font-weight: bold;
+    font-family: "Dubai", serif;
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+}
