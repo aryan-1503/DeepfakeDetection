@@ -3,13 +3,13 @@ import cv2
 from flask import Flask, request, jsonify
 import numpy as np
 import tensorflow as tf
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 model = tf.saved_model.load("saved_model/my_model")
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})
-# Ensure an uploads directory exists
+CORS(app)
+
 uploads_dir = os.path.join(app.root_path, 'uploads')
 os.makedirs(uploads_dir, exist_ok=True)
 
@@ -34,6 +34,7 @@ def preprocess_image(image):
         return None
 
 @app.route('/predict', methods=['POST'])
+@cross_origin()
 def predict():
     try:
         if 'image' not in request.files:
