@@ -8,7 +8,7 @@ from flask_cors import CORS
 model = tf.saved_model.load("saved_model/my_model")
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 # Ensure an uploads directory exists
 uploads_dir = os.path.join(app.root_path, 'uploads')
 os.makedirs(uploads_dir, exist_ok=True)
