@@ -1,5 +1,6 @@
 {
     "version": 2,
+<<<<<<< HEAD
     "builds": [
         {
             "src": "app.py",
@@ -16,3 +17,13 @@
         "FLASK_ENV": "production"
     }
 }
+=======
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/backend/app.py"
+      }
+    ]
+  }
+  
+>>>>>>> 8749d9d74a40593f98e907a916932554e457038d
