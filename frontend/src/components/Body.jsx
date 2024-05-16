@@ -35,7 +35,7 @@ const Body = () => {
         const formData = new FormData()
         formData.append('image',file)
         try{
-            const response = await axios.post('https://deepfake-detection-git-main-aryan-1503s-projects.vercel.app/',formData,{
+            const response = await axios.post('https://deepfake-detection-mu.vercel.app/',formData,{
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
