@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, {useEffect, useState} from 'react';
 import Demo from '../img/demo4.png'
 import Real from "./Real.jsx";
@@ -35,7 +36,7 @@ const Body = () => {
         const formData = new FormData()
         formData.append('image',file)
         try{
-            const response = await axios.post('https://deepfakedetectionbackend.onrender.com/predict',formData,{
+            const response = await axios.post('https://deepfake-detection-backend.onrender.com/predict',formData,{
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
