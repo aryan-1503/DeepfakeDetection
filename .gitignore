@@ -28,5 +28,6 @@ backend/dataset
 backend/logs
 backend/saved_model
 backend/uploads
+backend/myenv
 frontend/node_modules
 
