@@ -65,6 +65,5 @@ def predict():
         print("Error:", e)
         return jsonify({'error': 'An error occurred during prediction'})
 
-
 if __name__ == '__main__':
     app.run(debug=True)
