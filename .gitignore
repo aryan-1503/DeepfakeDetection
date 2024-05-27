@@ -27,6 +27,6 @@ dist-ssr
 backend/dataset
 backend/logs
 backend/saved_model
-
+backend/uploads
 frontend/node_modules
 
