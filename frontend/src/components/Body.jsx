@@ -36,7 +36,7 @@ const Body = () => {
         const formData = new FormData()
         formData.append('image',file)
         try{
-            const response = await axios.post('https://deepfake-detection-backend.onrender.com/predict',formData,{
+            const response = await axios.post('http://localhost:5000/predict',formData,{
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -82,7 +82,7 @@ const Body = () => {
                         </form>
                     </div>
                     <div className="result">
-                        {isPrediction && (result === 0 ? <Fake/> : <Real/>)}
+                        {isPrediction && (result === 1 ? <Fake/> : <Real/>)}
                     </div>
                 </div>
             </div>
