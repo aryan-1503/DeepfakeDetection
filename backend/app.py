@@ -58,13 +58,16 @@ def predict():
             print(f"RESULT : {result}")
 
             res = {'prediction': result}
-            response = jsonify(res)
-            return response
+
+            return _corsify_actual_response(jsonify(res))
 
     except Exception as e:
         print("Error:", e)
         return jsonify({'error': 'An error occurred during prediction'})
 
+def _corsify_actual_response(response):
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return response
 
 if __name__ == '__main__':
     app.run(debug=True)
