@@ -3,12 +3,12 @@ import cv2
 from flask import Flask, request, jsonify
 import numpy as np
 import tensorflow as tf
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 
 model = tf.saved_model.load("saved_model/my_model")
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/predict": {"origins": "https://deepfake-detection-sage.vercel.app"}})
 
 uploads_dir = os.path.join(app.root_path, 'uploads')
 os.makedirs(uploads_dir, exist_ok=True)
@@ -34,7 +34,6 @@ def preprocess_image(image):
         return None
 
 @app.route('/predict', methods=['POST'])
-@cross_origin()
 def predict():
     try:
         if 'image' not in request.files:
@@ -60,7 +59,6 @@ def predict():
 
             res = {'prediction': result}
             response = jsonify(res)
-            response.headers.add("Access-Control-Allow-Origin", "*")
             return response
 
     except Exception as e:
