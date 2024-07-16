@@ -1,0 +1,121 @@
+.register-wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: #000c21;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.register-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000c21;
+    width: 22%;
+    height: auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: rgb(183, 183, 182) 0px 0px 0px 1px;
+}
+
+.form-container form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.title{
+    color: #deb823;
+    font-size: 35px;
+    font-family: "Dubai",serif;
+    padding: 0 0 1rem 0;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+input{
+    height: 2.5rem;
+    width: 140%;
+    border-radius: 0.3rem;
+    padding-left: 0.6rem;
+    border: 2px solid #deb823;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+input:focus{
+    border: 2px solid #04f3d7;
+    outline: none;
+}
+
+
+button[type="submit"]{
+    width: 140%;
+    border-radius: 0.3rem;
+    background-color: #deb823;
+    color: #000c21;
+    font-weight: bold;
+}
+
+#show-pass-btn{
+    background-color: white;
+    color: #000a31;
+    width: max-content;
+    height: max-content;
+}
+
+.toggle-login{
+    color: #dedcdc;
+    font-family: "Dubai", serif;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0 0.5rem 0;
+    font-size: 18px;
+}
+
+@media (max-width: 480px){
+    .register-container{
+        width: 270px;
+    }
+
+    input,button[type="submit"]{
+        width: 115%;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 768px){
+    .register-container{
+        width: 330px;
+    }
+
+    input,button[type="submit"]{
+        width: 140%;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px){
+    .register-container{
+        width: 350px;
+    }
+
+    input,button[type="submit"]{
+        width: 140%;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px){
+    .register-container{
+        width: 350px;
+    }
+
+    input,button[type="submit"]{
+        width: 140%;
+    }
+}

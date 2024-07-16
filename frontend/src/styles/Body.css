@@ -2,10 +2,12 @@
     background-color: #000c21;
     display: flex;
     justify-content: center;
+    width: 100vw;
     /*height: 105vh;*/
     min-height: 92.8vh;
     overflow-y: auto;
 }
+
 .i1{
     color: white;
     font-size: 30px;
@@ -42,6 +44,7 @@
     margin-top: 0.5rem;
     width: 500px;
     background-color: #000a57;
+    color: white;
     height: 2rem;
     border-radius: 5px;
 }

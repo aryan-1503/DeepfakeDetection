@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Demo from '../img/demo4.png';
 import Real from './Real.jsx';
 import Fake from './Fake.jsx';
 import '../styles/Body.css';
 import axios from 'axios';
+import AuthContext from "../AuthContext/AuthContext.jsx";
+import toast, {Toaster} from "react-hot-toast";
 
 const Body = () => {
     const [file, setFile] = useState(null);
@@ -11,7 +13,7 @@ const Body = () => {
     const [isPrediction, setIsPrediction] = useState(false);
     const [result, setResult] = useState(null);
     const [error, setError] = useState(null);
-
+    const { user } = useContext(AuthContext);
     useEffect(() => {
         if (isPrediction) {
             window.scrollTo({
@@ -26,8 +28,17 @@ const Body = () => {
         setFile(uploadedFile);
         if (uploadedFile) {
             console.log(uploadedFile.name);
+            toast.success("Image Uploaded! Continue with detection",{
+                style: {
+                    fontSize: "15px"
+                }
+            })
         }
     };
+    useEffect(() => {
+        console.log("FROM BODY : ",user)
+    }, [user]);
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -35,14 +46,17 @@ const Body = () => {
         const formData = new FormData();
         formData.append('image', file);
         try {
-            const response = await axios.post('https://deepfake-detection-backend.onrender.com/predict', formData, {
+            const response = await axios.post('http://localhost:7000/api/v2/prediction/add-prediction', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
+                withCredentials: true
             });
-            console.log(response.data.prediction);
+            console.log("RES",response.data.prediction);
             setResult(response.data.prediction);
             setIsPrediction(true);
+            console.log("RESULT: ",result)
+
         } catch (e) {
             setError("Something went wrong");
             console.log(e.message);

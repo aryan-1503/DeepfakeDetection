@@ -1,0 +1,55 @@
+.predictions-wrapper{
+    background-color: #000c21;
+    width: auto;
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prediction-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.prediction-card{
+    border: 2px solid grey;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.prediction-card img{
+    width: 250px;
+    height: 250px;
+    object-fit: scale-down;
+    border-radius: 10px;
+}
+
+.prediction-card p{
+    margin-top: 1rem;
+    font-family: "Dubai", serif;
+
+}
+
+#real{
+    padding: 0.2rem 0.7rem;
+    background-color: #11e700;
+    color: #000c21;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#fake{
+    padding: 0.2rem 0.7rem;
+    background-color: #9C1A1C;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
