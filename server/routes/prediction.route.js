@@ -81,6 +81,4 @@ predictionRouter.get('/user-predictions', async (req, res) => {
     }
 });
 
-
-
 export { predictionRouter };

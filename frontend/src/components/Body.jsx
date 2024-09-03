@@ -53,6 +53,7 @@ const Body = () => {
                 withCredentials: true
             });
             console.log("RES",response.data.prediction);
+            
             setResult(response.data.prediction);
             setIsPrediction(true);
             console.log("RESULT: ",result)
@@ -88,7 +89,7 @@ const Body = () => {
                         </form>
                     </div>
                     <div className="result">
-                        {isPrediction && (result === 1 ? <Fake /> : <Real />)}
+                        {isPrediction && (result === "1" ? <Fake /> : <Real />)}
                     </div>
                 </div>
             </div>

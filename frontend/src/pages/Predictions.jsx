@@ -5,7 +5,7 @@ import AuthContext from '../AuthContext/AuthContext.jsx';
 import Loading from '../components/Loading.jsx';
 import "../styles/Predictions.css"
 
-const Predictions = () => {
+const   Predictions = () => {
     const [predictions, setPredictions] = useState([]);
     const { user } = useContext(AuthContext);
     const [loading, setLoading] = useState(false);

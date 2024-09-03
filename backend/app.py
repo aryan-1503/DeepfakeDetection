@@ -1,17 +1,15 @@
-import os
 import cv2
 from flask import Flask, request, jsonify
 import numpy as np
 import tensorflow as tf
 from flask_cors import CORS
 
+# Load the TensorFlow model
 model = tf.saved_model.load("saved_model/my_model")
 
+# Initialize Flask app
 app = Flask(__name__)
-CORS(app, resources={r"/predict": {"origins": "https://deepfake-detection-sage.vercel.app"}})
-
-uploads_dir = os.path.join(app.root_path, 'uploads')
-os.makedirs(uploads_dir, exist_ok=True)
+CORS(app)
 
 def error_level_analysis(image, quality_val=90):
     try:
@@ -41,12 +39,10 @@ def predict():
 
         img_file = request.files['image']
         if img_file:
-            # Save the image to the uploads directory
-            img_path = os.path.join(uploads_dir, img_file.filename)
-            img_file.save(img_path)
-
-            # Read the saved image
-            img_array = cv2.imread(img_path, cv2.IMREAD_COLOR)
+            # Read the image directly from the uploaded file
+            file_stream = img_file.read()
+            np_img = np.frombuffer(file_stream, np.uint8)
+            img_array = cv2.imdecode(np_img, cv2.IMREAD_COLOR)
 
             ela_image = error_level_analysis(img_array)
             if ela_image is None:
@@ -59,15 +55,9 @@ def predict():
 
             res = {'prediction': result}
 
-            return _corsify_actual_response(jsonify(res))
+            return jsonify(res)
 
     except Exception as e:
         print("Error:", e)
         return jsonify({'error': 'An error occurred during prediction'})
 
-def _corsify_actual_response(response):
-    response.headers.add("Access-Control-Allow-Origin", "*")
-    return response
-
-if __name__ == '__main__':
-    app.run(debug=True)

@@ -36,6 +36,7 @@ const Header = () => {
                     }
                 })
                 setUser(null);
+                navigate("/")
             }
         }catch (e) {
             console.log(e.message)
